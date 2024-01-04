@@ -73,16 +73,13 @@ def main():
             records.append(record)
             
         fi.close()
-
-    #print(records)
-
+        
     with open(outputfile_path, 'w', newline='', encoding="utf-8_sig") as fo:
         writer = csv.writer(fo)
         writer.writerow(SELECT_KEYS)
         for record in records:
             writer.writerow([record[key] for key in SELECT_KEYS])
         fo.close()
-
 
 if __name__ == "__main__":
     main()
